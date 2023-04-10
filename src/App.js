@@ -49,7 +49,7 @@ function App() {
     }
 
     return () => unsubscribe();
-  }, [auth, app]);
+  });
 
   const handleTextChange = (e) => {
     setText(e.target.value);
