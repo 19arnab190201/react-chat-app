@@ -29,6 +29,11 @@ function App() {
   const [text, setText] = useState("");
 
   useEffect(() => {
+    setMessages(messages.sort((a, b) => a.timestamp - b.timestamp));
+    console.log("messages:", messages);
+  }, []);
+
+  useEffect(() => {
     const db = getFirestore(app);
     const q = query(collection(db, "messages"), orderBy("timestamp"));
 
